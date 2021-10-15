@@ -8,18 +8,41 @@
  */
 public class Module
 {
-    public static final int credit = 15;
+    private int credit;
     private String code;
     private String title;
     
 
     /**
-     * Constructor for objects of class Module
+     * Constructor will initialise all the variables
      */
-    public Module()
+    public Module(String code, String title)
     {
-        // initialise instance variables
+        this.code = code;
+        this.title = title;
+        credit = 15;
     }
-
+    
+    public String getCode()
+    {
+        return code;
+    }
+    
+    public void setCredit(int credit)
+    {
+        this.credit =credit;
+    }
+    
+    
+    /**
+     * Print the details of the course, the list
+     * of students enrolled and the module
+     */
+    public void print()
+    {
+        
+        System.out.println(" Module Code: " + code + ": " + title);
+        System.out.println();
+    }
   
 }
