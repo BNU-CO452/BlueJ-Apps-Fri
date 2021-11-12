@@ -1,13 +1,12 @@
 import java.util.Random;
-
 /**
- * Demonstrate the StockManager and Product classes.
+ * Demonstrate the StockList and Product classes.
  * The demonstration becomes properly functional as
- * the StockManager class is completed.
+ * the StockList class is completed.
  * 
  * @author David J. Barnes and Michael Kölling.
- * @modified 
- * @version 2016.02.29
+ * @modified by Derek Peacock
+ * @version 2021-11-12
  */
 public class StockDemo
 {
@@ -61,6 +60,10 @@ public class StockDemo
         stock.print();        
     }
     
+    /**
+     * Thise method will buy different quantities of
+     * each of the products in the stock list.
+     */
     private void buyProducts()
     {
         Product product;
@@ -69,20 +72,42 @@ public class StockDemo
         for(int id = 100; id <= 110; id++)
         {
             product = stock.findProduct(id);
+            
             if(product == null)
             {
                 System.out.println("Product " + id + " Not found");
             }
             else
             {
-               
                quantity = generator.nextInt(20);
                stock.buyProduct(id, quantity);
             }
         }
     }
 
+    /**
+     * Thise method will sell different quantities of
+     * each of the products in the stock list.
+     */    
     private void sellProducts()
     {
+        Product product;
+        int quantity = 1;
+        
+        for(int id = 100; id <= 110; id++)
+        {
+            product = stock.findProduct(id);
+            
+            if(product == null)
+            {
+                System.out.println("Product " + id + " Not found");
+            }
+            else
+            {
+               quantity = generator.nextInt(20);
+               stock.sellProduct(id, quantity);
+            }
+        }
+        
     }    
 }
