@@ -44,6 +44,23 @@ public class Student
     }
     
     /**
+     * Award a different pass mark for each of the
+     * modules on the enrolled course
+     */    
+    public void createMarks()
+    {
+        int value = 70;
+        for(Module module : course.modules)
+        {
+            ModuleMark mark = new ModuleMark(module);
+            mark.setMark(value);
+            marks.add(mark);
+            
+            value = value - 10;
+        }
+    }
+    
+        /**
      * Find the module by the moduleCode and
      * set its mark to the value
      */
@@ -58,7 +75,8 @@ public class Student
     public void enrol(Course course)
     {
         this.course = course;
-        awardTestMarks();
+        createMarks();
+        
     }
     
     /**
@@ -102,9 +120,17 @@ public class Student
         course.print();
     }
     
-    private void printModules()
+    public void printModules()
     {
-
+        for(ModuleMark mark : marks)
+        {
+            System.out.println(mark.getModule().getCode());
+            System.out.print(" :");
+            System.out.println(mark.getModule().getTitle());
+            System.out.print("\t");            
+            System.out.print(mark.getCredit());
+            
+        }
     }
     
     public void printTranscript()

@@ -11,8 +11,7 @@ public class Module
     private int credit;
     private String code;
     private String title;
-    
-
+ 
     /**
      * Constructor will initialise all the variables
      */
@@ -41,7 +40,9 @@ public class Module
     public void print()
     {
         
-        System.out.println(" Module Code: " + code + ": " + title);
+        System.out.println(" Module Code: " + 
+                           code + ": " + title);
+                           
         System.out.println();
     }
   

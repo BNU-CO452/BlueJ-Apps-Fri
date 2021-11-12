@@ -17,9 +17,13 @@ public class Course
     
     private Grades finalGrade;
      
+    /**
+     * This constrructor will create a course
+     * object with set code and title.
+     */
     public Course()
     {
-        this("G400", "BSc Computing");
+        this("G400", "BSc (Hons) Computing");
     }
     
     /**
@@ -43,7 +47,11 @@ public class Course
      */
     public void createModules()
     {
-
+        Module moduleCO452 = new Module("CO452", "Programming Cobcepts");
+        addModule(moduleCO452);
+        
+        Module moduleCO453 = new Module("CO453", "Application Proramming");
+        addModule(moduleCO453);        
     }
     
     public void addModule(Module module)
@@ -59,6 +67,17 @@ public class Course
      */
     public Grades convertToGrade(int mark)
     {
+        Grades grade = Grades.NS;
+        
+        if(mark > Grades.B.getValue())
+        {
+            return Grades.A;
+        }
+        else if(mark >= 60)
+        {
+            return Grades.B;
+        }
+        
         return Grades.NS;
     }
     
@@ -89,6 +108,17 @@ public class Course
      */
     public void printModules()
     {
+       System.out.println("    Course Modules");
+       System.out.println("    ---------------");  
+       System.out.println();
+       
+        for(Module module : modules)
+        {
+           System.out.print("   " + module.getCode());    
+           System.out.println(": " + module.getTitle());           
+        }
+        
+        
         System.out.println();
     }
 }
