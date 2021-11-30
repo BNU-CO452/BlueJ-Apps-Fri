@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="4829.0" y="-103.5">com</node>
+    <node x="46.5" y="-103.5">netscape</node>
+    <node x="4580.0" y="-103.5">oracle</node>
+    <node x="4373.5" y="-103.5">org</node>
+    <node x="4135.5" y="-424.0">StockApp</node>
+    <node x="3724.5" y="-2073.5">Product</node>
+    <node x="3892.5" y="-103.5">sun</node>
+    <node x="3620.0" y="-103.5">META-INF</node>
+    <node x="3415.5" y="-103.5">jdk</node>
+    <node x="4077.5" y="-822.5">InputReader</node>
+    <node x="3071.5" y="-103.5">groovyjarjarasm</node>
+    <node x="2851.0" y="-103.5">java</node>
+    <node x="2596.5" y="-103.5">groovy</node>
+    <node x="2366.0" y="-103.5">javax</node>
+    <node x="3793.5" y="-1574.1363636363637">StockList</node>
+    <node x="2000.0" y="-103.5">groovyjarjarpicocli</node>
+    <node x="3800.5" y="-804.0">StockDemo</node>
+    <node x="1372.5" y="-103.5">groovyjarjarcommonscli</node>
+    <node x="862.5" y="-103.5">javafx</node>
+    <node x="529.0" y="-103.5">groovyjarjarantlr</node>
+    <node x="4114.5" y="-144.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Main" target="StockApp" relationship="CREATE">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+    <edge source="groovyjarjarantlr" target="groovyjarjarantlr" relationship="TO_ONE">
+      <point x="-151.0" y="-11.75" />
+      <point x="320.0" y="-91.75" />
+      <point x="320.0" y="180.0" />
+      <point x="755.5" y="180.0" />
+      <point x="75.5" y="23.5" />
+    </edge>
+    <edge source="StockApp" target="StockList" relationship="TO_ONE">
+      <point x="40.0" y="-64.0" />
+      <point x="4260.0" y="-520.0" />
+      <point x="4360.0" y="-520.0" />
+      <point x="4360.0" y="-960.0" />
+      <point x="4000.0" y="-960.0" />
+      <point x="80.0" y="230.5" />
+    </edge>
+    <edge source="StockDemo" target="StockList" relationship="DEPENDENCY">
+      <point x="0.0" y="-64.0" />
+      <point x="0.0" y="230.5" />
+    </edge>
+    <edge source="groovyjarjarpicocli" target="groovyjarjarpicocli" relationship="DEPENDENCY">
+      <point x="-160.0" y="11.75" />
+      <point x="1800.0" y="-68.25" />
+      <point x="1800.0" y="140.0" />
+      <point x="2080.0" y="140.0" />
+      <point x="-80.0" y="23.5" />
+    </edge>
+    <edge source="StockApp" target="StockList" relationship="CREATE">
+      <point x="-43.0" y="-64.0" />
+      <point x="4177.0" y="-460.0" />
+      <point x="3920.0" y="-460.0" />
+      <point x="3920.0" y="-520.0" />
+      <point x="3760.0" y="-520.0" />
+      <point x="3760.0" y="-960.0" />
+      <point x="3835.6666666666665" y="-960.0" />
+      <point x="-84.33333333333348" y="230.5" />
+    </edge>
+    <edge source="groovyjarjarcommonscli" target="groovyjarjarcommonscli" relationship="DEPENDENCY">
+      <point x="-187.5" y="-0.0" />
+      <point x="1120.0" y="-80.0" />
+      <point x="1120.0" y="240.0" />
+      <point x="1560.0" y="240.0" />
+      <point x="0.0" y="23.5" />
+    </edge>
+    <edge source="StockList" target="Product" relationship="TO_MANY">
+      <point x="40.0" y="-230.5" />
+      <point x="100.0" y="193.5" />
+    </edge>
+    <edge source="StockApp" target="InputReader" relationship="TO_ONE">
+      <point x="40.0" y="-64.0" />
+      <point x="60.0" y="82.5" />
+    </edge>
+    <edge source="StockApp" target="InputReader" relationship="CREATE">
+      <point x="-43.0" y="-64.0" />
+      <point x="4177.0" y="-460.0" />
+      <point x="3920.0" y="-460.0" />
+      <point x="3920.0" y="-520.0" />
+      <point x="4140.0" y="-520.0" />
+      <point x="-60.0" y="82.5" />
+    </edge>
+    <edge source="StockList" target="Product" relationship="DEPENDENCY">
+      <point x="-60.0" y="-230.5" />
+      <point x="0.0" y="193.5" />
+    </edge>
+    <edge source="StockDemo" target="StockList" relationship="TO_ONE">
+      <point x="80.0" y="-64.0" />
+      <point x="80.0" y="230.5" />
+    </edge>
+    <edge source="groovyjarjarantlr" target="groovyjarjarantlr" relationship="DEPENDENCY">
+      <point x="-151.0" y="11.75" />
+      <point x="340.0" y="-68.25" />
+      <point x="340.0" y="140.0" />
+      <point x="604.5" y="140.0" />
+      <point x="-75.5" y="23.5" />
+    </edge>
+    <edge source="StockApp" target="Product" relationship="CREATE">
+      <point x="-43.0" y="-64.0" />
+      <point x="4177.0" y="-460.0" />
+      <point x="3920.0" y="-460.0" />
+      <point x="3920.0" y="-520.0" />
+      <point x="3680.0" y="-520.0" />
+      <point x="3680.0" y="-1600.0" />
+      <point x="3740.0" y="-1600.0" />
+      <point x="-120.0" y="193.5" />
+    </edge>
+    <edge source="groovyjarjarcommonscli" target="groovyjarjarcommonscli" relationship="TO_ONE">
+      <point x="-187.5" y="-15.666666666666671" />
+      <point x="1100.0" y="-95.66666666666667" />
+      <point x="1100.0" y="280.0" />
+      <point x="1685.0" y="280.0" />
+      <point x="125.0" y="23.5" />
+    </edge>
+    <edge source="groovyjarjarpicocli" target="groovyjarjarpicocli" relationship="TO_ONE">
+      <point x="-160.0" y="-11.75" />
+      <point x="1780.0" y="-91.75" />
+      <point x="1780.0" y="180.0" />
+      <point x="2240.0" y="180.0" />
+      <point x="80.0" y="23.5" />
+    </edge>
+    <edge source="StockApp" target="StockDemo" relationship="CREATE">
+      <point x="-43.0" y="-64.0" />
+      <point x="4177.0" y="-460.0" />
+      <point x="3920.0" y="-460.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+    <edge source="StockDemo" target="Product" relationship="CREATE">
+      <point x="-80.0" y="-64.0" />
+      <point x="3840.0" y="-940.0" />
+      <point x="3740.0" y="-940.0" />
+      <point x="-120.0" y="193.5" />
+    </edge>
+    <edge source="groovyjarjarcommonscli" target="groovyjarjarcommonscli" relationship="TO_MANY">
+      <point x="-187.5" y="15.666666666666668" />
+      <point x="1140.0" y="-64.33333333333333" />
+      <point x="1140.0" y="200.0" />
+      <point x="1435.0" y="200.0" />
+      <point x="-125.0" y="23.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5499999999999999" showDependencies="true" x="4486.818181818182" y="-1515.8181818181818" />
+  <SelectedNodes>
+    <node>StockList</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
