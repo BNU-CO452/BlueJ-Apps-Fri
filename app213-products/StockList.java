@@ -50,11 +50,13 @@ public class StockList
         
         if(product == null)
         {
+            System.out.println(" Product " + productID + " NOT FOUND!!!");
         }
         else
         {
             product.increaseQuantity(amount);
-            System.out.println("NOT FOUND");
+            System.out.println(product);
+            System.out.println(" Bought " + amount + " new stock items");
             
         }
     }
@@ -91,19 +93,14 @@ public class StockList
         {
             if(stockQuantity > 0)
             {
-                if(stockQuantity > sellQuantity)
+                if(stockQuantity < sellQuantity)
                 {
-                    product.decreaseQuantity(sellQuantity);
-                    System.out.println("Selling " + sellQuantity + " " + product.getID());
-                    
+                    sellQuantity = stockQuantity;
                 }
-                else
-                {
-                    System.out.println("All stock is sold!!");
-                    System.out.println("Selling " + stockQuantity + " " + product.getID());
-                    product.decreaseQuantity(stockQuantity);
-                }
-                
+
+                System.out.println(product);
+                product.decreaseQuantity(sellQuantity);
+                System.out.println("Selling " + sellQuantity + " of " + product.getID());
             }
             else
             {
@@ -112,7 +109,7 @@ public class StockList
         }
         else
         {
-            // printout message
+            System.out.println(" Product " + productID + " NOT FOUND!!!");
         }
     }    
 
@@ -146,7 +143,7 @@ public class StockList
         
         if(product != null) 
         {
-            System.out.println(product.toString());
+            System.out.println(product);
         }
     }
     
