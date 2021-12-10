@@ -19,6 +19,8 @@
 public class Game 
 {
     public final Map MAP;
+    public Player player;
+
     private CommandReader reader;
     private boolean gameOver;
         
@@ -28,6 +30,7 @@ public class Game
     public Game() 
     {
         MAP = new Map();
+        player = new Player("Derek");
         reader = new CommandReader(this);
     }
 
