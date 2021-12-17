@@ -11,6 +11,8 @@ public class Player
 
     private Item item;
 
+    private int score = 0;
+
     private ArrayList<Item> items;
 
     // This is a percentage
@@ -43,5 +45,24 @@ public class Player
     public boolean isAlive()
     {
         return lives > 0;
+    }
+
+    /**
+     * If the item is an item of treasure inclrease
+     * the score
+     * @param item
+     */
+    public void addItem(Item item)
+    {
+        this.item = item;
+
+        if(item.getItemType()==ItemType.Treasure)
+        {
+            score += item.getValue();
+        }
+        else if(item.getItemType()==ItemType.Drink)
+        {
+            energy += 10;
+        }
     }
 }

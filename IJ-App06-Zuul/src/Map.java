@@ -15,7 +15,7 @@ public class Map
 {
     // Need to add a list of exits
     
-    private Location outside, theater, pub, lab, office;
+    private Location tennisCourt, cafe, theater, pub, lab, office;
 
     private Location currentLocation;
 
@@ -35,22 +35,34 @@ public class Map
      */
     private void createLocations()
     {
-        createOutside();
+        createTennisCourt();
+        createCafe();
         createTheatre();
         createPub();
         createOffice();
         createLab();
 
-        currentLocation = outside;  // start game outside
+        currentLocation = tennisCourt;  // start game outside
     }
-    
+
+    private void createCafe()
+    {
+        cafe = new Location("in a cafe with many empty tables");
+
+        cafe.setExit("south", tennisCourt);
+        tennisCourt.setExit("north", cafe);
+
+        Item late = new Item(ItemType.Drink, "Late");
+        cafe.addItem(late);
+    }
+
     /**
      * Create the outside and link it to the
      * theatre, lab and pub
      */
-    private void createOutside()
+    private void createTennisCourt()
     {
-        outside = new Location("outside the main entrance of the university");
+        tennisCourt = new Location("in center court at Wimbledon");
         
     }
     
@@ -59,10 +71,10 @@ public class Map
      */
     private void createPub()
     {
-        pub = new Location("in the campus pub");
+        pub = new Location("in the pub at Wimbledon");
         
-        pub.setExit("east", outside);
-        outside.setExit("west", pub);
+        pub.setExit("east", tennisCourt);
+        tennisCourt.setExit("west", pub);
     }
     
     /**
@@ -72,8 +84,8 @@ public class Map
     {
         theater = new Location("in a lecture theater");
         
-        theater.setExit("west", outside);
-        outside.setExit("east", theater);
+        theater.setExit("west", tennisCourt);
+        tennisCourt.setExit("east", theater);
     }
     
     /**
@@ -96,8 +108,8 @@ public class Map
         lab.setExit("east", office);
         office.setExit("west", lab);
         
-        lab.setExit("north", outside);
-        outside.setExit("south", lab);
+        lab.setExit("north", tennisCourt);
+        tennisCourt.setExit("south", lab);
     }
     
     public Location getCurrentLocation()
