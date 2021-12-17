@@ -21,8 +21,13 @@ import java.util.Iterator;
 public class Location 
 {
     private String description;
+
+    // choose single item
     private Item item;
+
+    // choose list of items
     private ArrayList<Item> items;
+
     private HashMap<String, Location> exits;        // stores exits of this room.
 
     /**
@@ -33,6 +38,7 @@ public class Location
     public Location(String description) 
     {
         this.description = description;
+        items = new ArrayList<Item>();
         exits = new HashMap<>();
     }
 
@@ -63,7 +69,13 @@ public class Location
      */
     public String getLongDescription()
     {
-        return " You are " + description + ".\n" + getExitString();
+        String output = " You are " + description + "\n" + getExitString();
+
+        if(item != null)
+        {
+            output = output.concat("\n Items include: " + item.getName());
+        }
+        return output;
     }
 
     /**
@@ -91,6 +103,25 @@ public class Location
     public Location getExit(String direction) 
     {
         return exits.get(direction);
+    }
+
+    public void addItem(Item item)
+    {
+        this.item = item;
+        this.items.add((item));
+    }
+
+    public Item remove(String itemName)
+    {
+        Item oldItem = item;
+
+        if(this.item.getName().equals(itemName))
+        {
+            item = null;
+            return oldItem;
+        }
+        else
+            return null;
     }
 }
 
